@@ -1,0 +1,28 @@
+{
+  "name": "buzz_board_restfull_api",
+  "version": "1.0.0",
+  "description": "Contains a RESTful API for an ecommerce company that handles order management, incorporates validations, and utilizes a MongoDB database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anoop-sharma1/buzz_board_restfull_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anoop-sharma1/buzz_board_restfull_api/issues"
+  },
+  "homepage": "https://github.com/Anoop-sharma1/buzz_board_restfull_api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "mongoose": "^7.1.1",
+    "nodemon": "^2.0.22"
+  }
+}
