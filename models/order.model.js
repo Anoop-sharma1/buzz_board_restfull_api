@@ -6,6 +6,7 @@ var orderSchema = new mongoose.Schema(
         order_id: {
             type: Number,
             required: true,
+            unique: true
         },
 
         item_name: {
