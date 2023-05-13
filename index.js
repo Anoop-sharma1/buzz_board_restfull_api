@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const dbConnect = require("./config/db.config");
 const { notFound, errorHandler } = require("./middlewares/error.handler");
+
 require("dotenv").config();
 
 const app = express();
@@ -20,11 +21,11 @@ app.use("/api/v1/orders", require("./routes/order.route"));
 
 //Handle incorrect routes
 app.use("*", (req, res) => {
-    return res.status(404).json({
-        status : false,
-        message : "Incorrect route please check for typo and request type!",
-        data : {}
-    });
+  return res.status(404).json({
+    status: false,
+    message: "Incorrect route please check for typo and request type!",
+    data: {}
+  });
 });
 
 //Error handlers

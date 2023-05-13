@@ -37,11 +37,22 @@ const list = (async (req, res) => {
 
     try {
 
-        const orders = await OrderModel.find({ order_date: date });
+        const orders = await OrderModel.aggregate([
+            {
+                $match: {
+                    $expr: {
+                        $regexMatch: {
+                            input: { $toString: "$order_date" },
+                            regex: date
+                        }
+                    }
+                }
+            }
+        ]).exec();
 
         if (orders.length <= 0) {
             return res.status(404).json({
-                status: true,
+                status: false,
                 message: "No orders found!",
                 data: orders
             });
@@ -142,7 +153,7 @@ const update = (async (req, res) => {
             return res.status(404).json({
                 status: false,
                 message: 'Order not found!',
-                data: order
+                data: {}
             });
         }
 
